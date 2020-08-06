@@ -30,17 +30,29 @@
 </table>
 <h2>NEW book</h2>
 <%= form_for(@book) do |f| %>
+<!-- ---------erarro----------------- -->
 	<% if @book.errors.any? %>
 	 <div id="error_explanation">
-	 	<h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-	 	<ul>
-	 		<% @book.errors.full_messages.each do |message| %>
-	 		<li><%= message %></li>
-	 		<% end %>
-	 	</ul>
+	 	<div class="error_text">
+		 	<h2 class="error_text_head"><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+		 	<ul class="error_text_body">
+		 		<% @book.errors.full_messages.each do |message| %>
+		 		<li><%= message %></li>
+		 		<% end %>
+		 	</ul>
+		 </div>
+	 	<div class="title_error">
+		<p class="error">Title</p>
+		<%= f.text_field :title, class: "error_box" %>
+	</div>
+	<div class="body_error">
+		<p class="error">Body</p>
+		<%= f.text_area :body, class: "error_box" %>
+	</div>
+	<%= f.submit 'Create Book' %>
 	 </div>
-	 <% end %>
+ <!-- -------------------------------- -- -->
+	 <% else %>
 	<div class=title>
 		<p>Title</p>
 		<%= f.text_field :title %>
@@ -50,4 +62,5 @@
 		<%= f.text_area :body %>
 	</div>
 	<%= f.submit 'Create Book' %>
+	<% end %>
 <% end %>

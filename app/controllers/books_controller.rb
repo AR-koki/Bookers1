@@ -12,13 +12,13 @@ class BooksController < ApplicationController
   end
 
   def new
-    book = Book.new(book_params)
   end
 
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to book_path(@book.id)
+      redirect_to book_path(@book.id), notice: "Book was successfully created."
+      # redirect_to complete_book_path(@book.id)
     else
       logger.debug(@book.errors.to_yaml)
       @books = Book.all
@@ -27,14 +27,18 @@ class BooksController < ApplicationController
     end
   end
 
+  def complete
+    # @book = Book.find(params[:id])
+  end
+
   def edit
     @book = Book.find(params[:id])
   end
 
   def update
-    book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book)
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    redirect_to book_path(@book)
   end
 
   def destroy
