@@ -31,32 +31,37 @@ td {
 h2 {
 	padding: 10px 0;
 }
+a {
+	color: black;
+}
+a:hover {
+	color: white;
+	background-color: black;
+}
 .title {
 	padding: 5px 0;
 }
 .error_text {
 	width: 400px;
-	border: 2px solid red;
 	margin-bottom: 15px;
 }
 .error_text_head {
 	font-size: 15px;
 	color: white;
-	background-color: red;
 }
 .error_text_body {
 	font-size: 15px;
 	padding: 30px 0 30px 100px;
 }
 .error {
-	background-color: red;
 	display: inline-block;
 }
 .body {
 	padding: 5px 0 10px 0;
 }
 .error_box {
-	border-color: red;
+	display: block;
+	margin-bottom: 5px;
 }
 .create {
 	display: inline-block;
