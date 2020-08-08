@@ -23,10 +23,10 @@ body {
 	padding: 30px;
 }
 th {
-	padding: 5px;
+	padding: 3px 5px;
 }
 td {
-	padding: 5px;
+	padding: 3px 5px;
 }
 h2 {
 	padding: 10px 0;
@@ -62,9 +62,4 @@ a:hover {
 .error_box {
 	display: block;
 	margin-bottom: 5px;
-}
-.create {
-	display: inline-block;
-	text-align: center;
-	width: 90px;
 }
